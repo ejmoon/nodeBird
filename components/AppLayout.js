@@ -9,7 +9,7 @@ import LoginForm from '../components/LoginForm';
 
 // layOut vs app.js
 // app.js : 전체 공통
-// layOut.js : 일부 공통
+// layOut.js : 일부 공통`
 
 /**
     jQuery vs React
@@ -25,22 +25,28 @@ const SearchInput = styled(Input.Search)`
 const AppLayOut = ({children}) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+    const items = [
+        {
+            label: (<a href="/">노드버드</a>)
+            , key: 'item-1'
+        },
+        {
+            label: (<a href="/profile">프로필</a>)
+            , key: 'item-2'
+        },
+        {
+            key: 'item-3'
+            , icon: <SearchInput enterButton style={{ verticalAlign: 'middle' }}/>
+        },
+        {
+            label: (<a href="/signup">회원가입</a>)
+            , key: 'item-4'
+        },
+    ];
+
     return (
         <div>
-            <Menu mode="horizontal">
-                <Menu.Item key="menuNodebarid">
-                    <Link href="/"><a>노드버드</a></Link>
-                </Menu.Item>
-                <Menu.Item key="menuProfile">
-                    <Link href="/profile"><a>프로필</a></Link>
-                </Menu.Item>
-                <Menu.Item key="menuSearch">
-                    <SearchInput enterButton style={{ verticalAlign: 'middle' }}/>
-                </Menu.Item>
-                <Menu.Item key="menuSignup">
-                    <Link href="/signup"><a>회원가입</a></Link>
-                </Menu.Item>
-            </Menu>
+            <Menu mode='horizontal' items={items} />
             <Row gutter={8}>
                 <Col xs={24} md={6}>
                    {isLoggedIn ? <UseProfile setIsLoggedIn={setIsLoggedIn}/> : <LoginForm setIsLoggedIn={setIsLoggedIn} />}
