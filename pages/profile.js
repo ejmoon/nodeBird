@@ -12,7 +12,7 @@ const Profile = () => {
         <>
             <Head>
                 <meta charSet='utf-8' />
-                <title>프로필| NodeBird</title>
+                <title>프로필 | NodeBird</title>
             </Head>
             <AppLayOut>
                 <NicknameEditForm />

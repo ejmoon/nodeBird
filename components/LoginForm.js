@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 
-{/* 
+/* 
     useMemo : 값을 캐싱
     useCallback : 함수를 캐싱. 컴포넌트 안에 넣을 때
     
@@ -15,7 +15,7 @@ import styled from 'styled-components';
     const style = useMemo(() => ({marginTop: 10}), []);
     
     <div style={style}>    
-*/}
+*/
 const ButtonWrapper = styled.div`
     margin: 10px;
 `;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Proptypes from 'prop-types';
 import Link from 'next/link';
-import { Col, Input, Menu, Row } from 'antd';
+import { Col, Input, Menu, Row, Item } from 'antd';
 import styled from 'styled-components';
 
 import UseProfile from '../components/UseProfile';
@@ -28,16 +28,16 @@ const AppLayOut = ({children}) => {
     return (
         <div>
             <Menu mode="horizontal">
-                <Menu.Item>
+                <Menu.Item key="menuNodebarid">
                     <Link href="/"><a>노드버드</a></Link>
                 </Menu.Item>
-                <Menu.Item>
+                <Menu.Item key="menuProfile">
                     <Link href="/profile"><a>프로필</a></Link>
                 </Menu.Item>
-                <Menu.Item>
+                <Menu.Item key="menuSearch">
                     <SearchInput enterButton style={{ verticalAlign: 'middle' }}/>
                 </Menu.Item>
-                <Menu.Item>
+                <Menu.Item key="menuSignup">
                     <Link href="/signup"><a>회원가입</a></Link>
                 </Menu.Item>
             </Menu>
