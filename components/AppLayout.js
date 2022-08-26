@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Proptypes from 'prop-types';
 import Link from 'next/link';
 import { Col, Input, Menu, Row, Item } from 'antd';
@@ -23,7 +24,11 @@ const SearchInput = styled(Input.Search)`
 `;
 
 const AppLayOut = ({children}) => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const isLoggedIn = useSelector((state) => state.user.isLoggedIn)
+    // const {isLoggedIn} = useSelector((state) => state.user)
+
+    // redux 에서 관리
+    // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const items = [
         {
@@ -49,7 +54,8 @@ const AppLayOut = ({children}) => {
             <Menu mode='horizontal' items={items} />
             <Row gutter={8}>
                 <Col xs={24} md={6}>
-                   {isLoggedIn ? <UseProfile setIsLoggedIn={setIsLoggedIn}/> : <LoginForm setIsLoggedIn={setIsLoggedIn} />}
+                   {/* {isLoggedIn ? <UseProfile setIsLoggedIn={setIsLoggedIn}/> : <LoginForm setIsLoggedIn={setIsLoggedIn} />} */}
+                   {isLoggedIn ? <UseProfile /> : <LoginForm />}
                 </Col>
                 <Col xs={24} md={12}>
                     {children}

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3060",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -12,8 +12,12 @@
     "@ant-design/icons": "^4.7.0",
     "antd": "^4.22.6",
     "next": "12.2.5",
+    "next-redux-wrapper": "^7.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-redux": "^8.0.2",
+    "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
